@@ -1,4 +1,4 @@
-# CartPole_DQN / CartPole 强化学习实验流水线（DQN）
+# CartPole_DQN / CartPole 强化学习实验工作流（DQN）
 
 [English](#english-readme) | [中文](#chinese-readme)
 
@@ -106,7 +106,7 @@ The URL is not finalized yet; a link will be added later.
 ## 中文 README
 
 ### 1) 这是什么项目
-这是一个用于 **CartPole-v1** 环境的强化学习实验流水线，核心算法为 **DQN (Deep Q-Networks)**。
+这是一个用于 **CartPole-v1** 环境的强化学习实验工作流，核心算法为 **DQN (Deep Q-Networks)**。
 项目强调可复现性与系统化实验流程（精度分析 → 候选搜索 → 模型筛选 → 敏感度分析），并且与 **Weights & Biases (W&B / wandb)** 深度耦合用于实验跟踪与可视化。
 
 ### 2) 技术栈
@@ -118,7 +118,7 @@ The URL is not finalized yet; a link will be added later.
 ### 3) 重要：密钥 / W&B（多数运行需要）
 本项目与 W&B 紧密耦合。
 
-如果你不想使用 W&B，需要你自行在代码/配置层面关闭相关逻辑；默认流水线假设 W&B 可用。
+如果你不想使用 W&B，需要你自行在代码/配置层面关闭相关逻辑；默认工作流假设 W&B 可用。
 
 #### 3.1 创建 `secrets.json`
 - 在**仓库根目录**创建 `secrets.json`（与 `run.bat` 同级）。
@@ -145,7 +145,7 @@ The URL is not finalized yet; a link will be added later.
 #### 核心（必须）
 - `configs/`：YAML 配置（训练参数、扫描参数等）
 - `src/`：核心库代码（agent、network、replay buffer、env 封装等）
-- `scripts/`：实验流水线脚本（Step1–Step4）
+- `scripts/`：实验工作流脚本（Step1–Step4）
 - `requirements.txt`：依赖版本
 
 #### 可选（工具性质）
@@ -165,7 +165,7 @@ The URL is not finalized yet; a link will be added later.
 
 建议顺序（更符合实际使用）：
 1. 先从默认主入口跑起来：`python scripts/main_cartpole_dqn.py`
-2. 然后再按阶段跑完整流水线（Step1A → Step1B → Step2 → Step3 → Step4）
+2. 然后再按阶段跑完整工作流（Step1A → Step1B → Step2 → Step3 → Step4）
 
 脚本入口（建议顺序）：
 - 默认主入口：`python scripts/main_cartpole_dqn.py`
@@ -198,4 +198,4 @@ The URL is not finalized yet; a link will be added later.
 - 确认 `.gitignore` 已忽略密钥与常见输出目录（`wandb/`、`logs/`、`artifacts/`、`__pycache__/` 等）。
 - 推送前删除不想公开的自动产出（如 `data/`、`plot/`、本地 `wandb/` 缓存等）。
 - 快速自检：运行 `python -m compileall .`，确保没有语法错误。
-- 可选：用一个小配置跑一下 Step1/Step2，确认流水线仍可启动。
+- 可选：用一个小配置跑一下 Step1/Step2，确认工作流仍可启动。
