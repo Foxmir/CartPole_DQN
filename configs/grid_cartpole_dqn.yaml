@@ -1,0 +1,27 @@
+# Path: configs/grid_cartpole_dqn.yaml
+# Purpose: W&B Sweep config (Grid) for sensitivity analysis; used by W&B (not parsed like the default runtime config).
+
+program: scripts/step4_cartpole_sensitivity_analysis.py # Main script path
+method: grid
+
+metric:
+  name: final_mean # Metric logged via wandb.log; must be a single metric; here it is mean return after evaluation
+  goal: maximize   # Grid search enumerates all values; goal is still useful for W&B visualizations (e.g., ranking)
+
+parameters:
+  agent:
+    parameters:
+      learning_rate:
+        values: [0.00075, 0.00152, 0.00304] # 0.5x, 1.0x, 2.0x, based on top1 = 0.001516538
+      epsilon_decay:
+        values: [0.975, 0.983, 0.991] # Perturbation: use ~1.5x range (2.0x may be too aggressive for CartPole epsilon)
+      tau: 
+        values: [0.015, 0.030, 0.060] # 0.5x, 1.0x, 2.0x, based on top1 = 0.030475336
+
+  training:
+    parameters:
+      batch_size: 
+        values: [64, 128, 256] 
+      main_seed: 
+        values: [501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520] # Ensure the code reads this seed list correctly
+

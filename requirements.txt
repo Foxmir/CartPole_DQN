@@ -1,0 +1,15 @@
+# Path: requirements.txt
+# Purpose: Pinned Python dependencies for reproducible runs.
+
+# --- Core framework & environment ---
+tensorflow==2.20.0      # Minimum recommended >=2.10
+gymnasium[accept-rom-license,classic-control]==1.2.2  # Minimum recommended >=0.29
+
+# --- Configuration management ---
+pyyaml==6.0.2  # Minimum recommended >=6.0
+
+# --- Plotting ---
+matplotlib==3.10.0  # Minimum recommended >=3.7
+
+# --- Experiment tracking ---
+wandb==0.24.0  # Minimum recommended >=0.15

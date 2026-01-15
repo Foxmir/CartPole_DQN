@@ -1,0 +1,51 @@
+# Path: configs/cartpole_dqn_good.yaml
+# Purpose: A known-good CartPole-v1 DQN configuration used to produce weights for Step1A precision analysis.
+
+# --- Experiment Description (Optional but Recommended) ---
+description: "Baseline DQN configuration for CartPole-v1"
+
+# --- Environment Configuration ---
+environment:
+  name: "CartPole-v1"      # Gymnasium environment name
+  max_episode_steps: 500   # Default max steps for CartPole-v1 (v0 was 200)
+  render_mode: null        # Optional: "human" or "rgb_array" (as needed)
+
+# --- Network Configuration (MLP for DQN) ---
+network:
+  type: "MLP"              # Network type identifier
+  # layers:                  # (This depends on how your MLP parses the config; CartPole network is hardcoded in code, so you can ignore this.)
+  #   - type: Dense1
+  #     units: 32           # Hidden units in the first layer (adjust as needed)
+  #     activation: relu
+  #     kernel_initializer: he_uniform
+  #   - type: Dense2
+  #     units: 64           # Hidden units in the second layer (adjust as needed)
+  #     activation: relu
+  #     kernel_initializer: he_uniform
+
+# --- Memory Configuration (Replay Buffer) ---
+memory:
+  capacity: 50000          # Replay buffer capacity
+
+# --- Agent Configuration (DQN) ---
+agent:
+  name: "Step1A_DQNAgent"   # Agent name (for logs/identification)
+  gamma: 0.99878248         # Discount factor
+  learning_rate: 9.7323469e-4     # Learning rate (Adam optimizer)
+  # Epsilon Greedy Strategy Parameters
+  epsilon_start: 1.0             # Initial exploration rate
+  epsilon_decay: 0.99905345      # Exploration decay factor (multiplicative)
+  epsilon_min: 0.01              # Minimum exploration rate
+  # Target Network Update Parameters
+  tau: 0.0092047537         # Soft update coefficient (if using soft updates)
+  # target_update_freq: 100 # Hard update frequency (training steps) - usually choose either this or tau
+
+# --- Training Configuration ---
+training:
+  num_episodes: 200          # Total training episodes
+  batch_size: 128            # Batch size sampled from replay buffer
+  initial_collect_size: 1000 # Collect enough samples before training (improves diversity)
+  main_seed: 42              # RNG seed for reproducibility (recommended from the start)
+
+# evaluator:
+#   n_eval: 20  # Step1A is meant to determine the best n_eval; other evaluator params are hardcoded.

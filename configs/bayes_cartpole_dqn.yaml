@@ -1,0 +1,43 @@
+# Path: configs/bayes_cartpole_dqn.yaml
+# Purpose: W&B Sweep config (Bayes) for candidate search; used by W&B (not parsed like the default runtime config).
+
+program: scripts/step2_cartpole_candidate_search.py # Main script path
+method: bayes
+
+metric:
+  name: config_all_train_seed_mean # Metric logged via wandb.log; must be a single metric; here it is mean return after evaluation
+  goal: maximize
+
+parameters:
+  agent: # <--- Begin agent parameter group
+    parameters:
+      name: # <--- name
+        value: "Step2_Bayes_DQNAgent-N5"  # Run with 5 train seeds
+      gamma: # <--- gamma
+        distribution: uniform
+        min: 0.95
+        max: 0.999
+      learning_rate: # <--- learning_rate
+        distribution: log_uniform_values # Log-uniform distribution
+        min: 0.0001 # 1e-4
+        max: 0.01   # 1e-2
+      epsilon_decay: # <--- epsilon_decay
+        distribution: log_uniform_values # Log-uniform distribution
+        min: 0.98
+        max: 0.999
+      tau: # <--- tau
+        distribution: log_uniform_values
+        min: 0.001
+        max: 0.05
+    
+  memory: # <--- Begin memory parameter group
+    parameters:
+      capacity: # <--- capacity
+        values: [10000, 20000, 30000, 40000, 50000]
+
+  training: # <--- Begin training parameter group
+    parameters:
+      num_episodes: 
+        values: [300, 400, 500]        # Total training episodes
+      batch_size: # <--- batch_size
+        values: [64, 128, 256] # Categorical choices

@@ -1,0 +1,30 @@
+# Path: configs/cartpole_dqn_top1.yaml
+# Purpose: Stores the top-1 (champion) hyperparameter set produced in Step3 (candidate c10).
+
+environment:
+  name: "CartPole-v1"      
+  max_episode_steps: 500   
+  render_mode: null    
+
+network:
+  type: "MLP"
+
+memory:
+  capacity: 40000           
+
+agent:
+  name: "Step4_DQNAgent"
+  gamma: 0.979669671
+  learning_rate: 0.001516538
+  epsilon_start: 1
+  epsilon_decay: 0.983003997
+  epsilon_min: 0.01
+  tau: 0.030475336         
+
+training:
+  num_episodes: 500        
+  batch_size: 128           
+  initial_collect_size: 1000 
+
+evaluator: 
+  n_eval: 70 # Standard evaluation protocol

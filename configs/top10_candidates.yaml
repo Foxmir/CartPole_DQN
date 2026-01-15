@@ -1,0 +1,235 @@
+# configs\top10_candidates.yaml
+# Auto-generated from step2_top_10.csv
+# Format: top-level keys are '01'..'10' (ranked by config_all_train_seed_mean desc)
+# Each key contains the full configuration used for that candidate
+# Step3 will read this file to run evaluations
+
+# 01: mean=500, sd=0, wandb_id=mxpaqvpi, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-1611
+"c01": # id
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 50000
+  agent:
+    name: "Step3_DQNAgent_c01"
+    gamma: 0.992039804
+    learning_rate: 0.002936424
+    epsilon_start: 1
+    epsilon_decay: 0.997555109
+    epsilon_min: 0.01
+    tau: 0.005405185
+  training:
+    num_episodes: 500
+    batch_size: 256
+    initial_collect_size: 1000
+
+# 02: mean=498.6114286, sd=3.104940106, wandb_id=5qymv9r7, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-0927
+"c02":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 50000
+  agent:
+    name: "Step3_DQNAgent_c02"
+    gamma: 0.983542732
+    learning_rate: 0.006797008
+    epsilon_start: 1
+    epsilon_decay: 0.983812338
+    epsilon_min: 0.01
+    tau: 0.0471646
+  training:
+    num_episodes: 500
+    batch_size: 64
+    initial_collect_size: 1000
+
+# 03: mean=489.5942857, sd=18.72691395, wandb_id=ohbiaa71, wandb_name=Step2_Bayes_DQNAgent-N5-20251225-1327
+"c03":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 50000
+  agent:
+    name: "Step3_DQNAgent_c03"
+    gamma: 0.998480373
+    learning_rate: 0.005597498
+    epsilon_start: 1
+    epsilon_decay: 0.996914408
+    epsilon_min: 0.01
+    tau: 0.002946785
+  training:
+    num_episodes: 500
+    batch_size: 256
+    initial_collect_size: 1000
+
+# 04: mean=421.3485714, sd=170.5540436, wandb_id=kh56e5ty, wandb_name=Step2_Bayes_DQNAgent-N5-20251225-1951
+"c04":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 40000
+  agent:
+    name: "Step3_DQNAgent_c04"
+    gamma: 0.985150526
+    learning_rate: 0.004913748
+    epsilon_start: 1
+    epsilon_decay: 0.996118322
+    epsilon_min: 0.01
+    tau: 0.00373859
+  training:
+    num_episodes: 400
+    batch_size: 256
+    initial_collect_size: 1000
+
+# 05: mean=420.18, sd=178.482946, wandb_id=n4guy7ur, wandb_name=Step2_Bayes_DQNAgent-N5-20251225-0452
+"c05":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 50000
+  agent:
+    name: "Step3_DQNAgent_c05"
+    gamma: 0.989899023
+    learning_rate: 0.005752644
+    epsilon_start: 1
+    epsilon_decay: 0.996025028
+    epsilon_min: 0.01
+    tau: 0.003453637
+  training:
+    num_episodes: 400
+    batch_size: 256
+    initial_collect_size: 1000
+
+# 06: mean=417.9428571, sd=154.836239, wandb_id=pbk6daa6, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-1949
+"c06":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 30000
+  agent:
+    name: "Step3_DQNAgent_c06"
+    gamma: 0.988526859
+    learning_rate: 0.003040226
+    epsilon_start: 1
+    epsilon_decay: 0.990946572
+    epsilon_min: 0.01
+    tau: 0.006837925
+  training:
+    num_episodes: 500
+    batch_size: 64
+    initial_collect_size: 1000
+
+# 07: mean=410.08, sd=138.848628, wandb_id=bulsge74, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-1034
+"c07":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 40000
+  agent:
+    name: "Step3_DQNAgent_c07"
+    gamma: 0.982075748
+    learning_rate: 0.003701418
+    epsilon_start: 1
+    epsilon_decay: 0.984582303
+    epsilon_min: 0.01
+    tau: 0.019878577
+  training:
+    num_episodes: 500
+    batch_size: 128
+    initial_collect_size: 1000
+
+# 08: mean=401.8685714, sd=219.428545, wandb_id=sh0tjkdk, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-0345
+"c08":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 50000
+  agent:
+    name: "Step3_DQNAgent_c08"
+    gamma: 0.978073198
+    learning_rate: 0.005141262
+    epsilon_start: 1
+    epsilon_decay: 0.985545283
+    epsilon_min: 0.01
+    tau: 0.025951876
+  training:
+    num_episodes: 500
+    batch_size: 64
+    initial_collect_size: 1000
+
+# 09: mean=378.5085714, sd=161.1344836, wandb_id=w8nflzbo, wandb_name=Step2_Bayes_DQNAgent-N5-20251225-2349
+"c09":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 30000
+  agent:
+    name: "Step3_DQNAgent_c09"
+    gamma: 0.988092751
+    learning_rate: 0.001096327
+    epsilon_start: 1
+    epsilon_decay: 0.981005842
+    epsilon_min: 0.01
+    tau: 0.025577869
+  training:
+    num_episodes: 400
+    batch_size: 64
+    initial_collect_size: 1000
+
+# 10: mean=372.4628571, sd=181.349414, wandb_id=zl8vas2c, wandb_name=Step2_Bayes_DQNAgent-N5-20251226-1156
+"c10":
+  environment:
+    name: "CartPole-v1"
+    max_episode_steps: 500
+    render_mode: null
+  network:
+    type: "MLP"
+  memory:
+    capacity: 40000
+  agent:
+    name: "Step3_DQNAgent_c10"
+    gamma: 0.979669671
+    learning_rate: 0.001516538
+    epsilon_start: 1
+    epsilon_decay: 0.983003997
+    epsilon_min: 0.01
+    tau: 0.030475336
+  training:
+    num_episodes: 500
+    batch_size: 128
+    initial_collect_size: 1000
